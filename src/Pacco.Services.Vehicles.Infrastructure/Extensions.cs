@@ -80,6 +80,7 @@ namespace Pacco.Services.Vehicles.Infrastructure
                 .UseSwaggerDocs()
                 .UseJaeger()
                 .UseConvey()
+                .UseQoSCache()
                 .UsePublicContracts<ContractAttribute>()
                 .UseMetrics()
                 .UseRabbitMq()
