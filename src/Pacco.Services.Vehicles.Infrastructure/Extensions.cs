@@ -18,6 +18,7 @@ using Convey.MessageBrokers.RabbitMQ;
 using Convey.Metrics.AppMetrics;
 using Convey.Persistence.MongoDB;
 using Convey.Persistence.Redis;
+using Convey.QoS.Violation;
 using Convey.Tracing.Jaeger;
 using Convey.Tracing.Jaeger.RabbitMQ;
 using Convey.WebApi;
@@ -66,6 +67,7 @@ namespace Pacco.Services.Vehicles.Infrastructure
                 .AddRedis()
                 .AddMetrics()
                 .AddJaeger()
+                .AddQoSTrackingDecorators()
                 .AddMongo()
                 .AddHandlersLogging()
                 .AddMongoRepository<VehicleDocument, Guid>("vehicles")

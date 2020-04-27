@@ -1,8 +1,7 @@
+using Convey.Exceptions;
+using Convey.WebApi.Exceptions;
 using System;
 using System.Net;
-using Convey.WebApi.Exceptions;
-using Pacco.Services.Vehicles.Application.Exceptions;
-using Pacco.Services.Vehicles.Core.Exceptions;
 
 namespace Pacco.Services.Vehicles.Infrastructure.Exceptions
 {

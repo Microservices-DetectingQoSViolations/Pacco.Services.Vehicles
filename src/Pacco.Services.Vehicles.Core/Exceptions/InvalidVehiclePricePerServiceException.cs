@@ -1,3 +1,5 @@
+using Convey.Exceptions;
+
 namespace Pacco.Services.Vehicles.Core.Exceptions
 {
     public class InvalidVehiclePricePerServiceException : DomainException
