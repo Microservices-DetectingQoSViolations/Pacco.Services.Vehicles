@@ -3,6 +3,7 @@ using Convey;
 using Convey.Secrets.Vault;
 using Convey.CQRS.Queries;
 using Convey.Logging;
+using Convey.QoS.Violation.Runtime;
 using Convey.Types;
 using Convey.WebApi;
 using Convey.WebApi.CQRS;
@@ -38,7 +39,8 @@ namespace Pacco.Services.Vehicles.Api
                             afterDispatch: (cmd, ctx) => ctx.Response.Created($"vehicles/{cmd.VehicleId}"))
                         .Put<UpdateVehicle>("vehicles/{vehicleId}")
                         .Delete<DeleteVehicle>("vehicles/{vehicleId}")
-                    ))
+                    )
+                    .UseRuntimeMetrics())
                 .UseLogging()
                 .UseVault()
                 .Build()
